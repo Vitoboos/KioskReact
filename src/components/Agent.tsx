@@ -14,16 +14,12 @@ const Agent = ({ image }: AgentProps) => {
                 alt="Agente Corporativo"
                 sx={{
                     width: {
-                        xs: "40vw",
-                        sm: "20vw",
-                        md: "20vw",
-                        lg: "30vw",
+
+                        lg: "80%",
                     },
                     height: {
-                        xs: "40vh",
-                        sm: "20vh",
-                        md: "20vh",
-                        lg: "60vh",
+
+                        lg: "80%",
                     },
                 }}
             >

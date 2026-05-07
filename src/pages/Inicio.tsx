@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Container, Grid } from '@mui/material'
 // Componentes
 
 import Time from '../components/Time'
@@ -19,35 +19,35 @@ import agentIcon from '../assets/agente.png'
 const Home = () => {
     return (
         <>
-            <Box>
-
-                <Time />
-
-                <Box sx={{
-                    display: 'flex',
-                    flex: 1,
-                    minHeight: 0,
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+            <Time />
+            <Container
+                sx={{
+                    minWidth: "70%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    minHeight: "100dvh",
                     "@media (orientation: landscape)": {
-                        flexDirection: 'row',
+                        display: "flex",
+                        flexDirection: "row",
                     }
                 }}>
+                <Menu>
+                    <MenuItem title='Web Oficial' image={web_icon} site="https://www.rolda.com.ve/en" />
+                    <MenuItem title='Red Social Corporativa' image={social_icon} site="" />
+                    <MenuItem title='Capital Humano' image={hr_icon} site="" />
+                    <MenuItem title='Buzón de Sugerencias' image={suggestions_icon} site="" />
+                    {/* <Grid size={12}>
+                        <Agent image={agentIcon} />
+                    </Grid> */}
+                </Menu>
+            </Container>
 
-                    <Menu>
-                        <MenuItem title='Web Oficial' image={web_icon} site="https://www.rolda.com.ve/en"/>
-                        <MenuItem title='Red Social Corporativa' image={social_icon} site=""/>
-                        <MenuItem title='Capital Humano' image={hr_icon} site=""/>
-                        <MenuItem title='Buzón de Sugerencias' image={suggestions_icon} site=""/>
-                    </Menu>
-
-                    <Agent image={agentIcon} />
-
-                </Box>
 
 
-            </Box>
+
+
         </>
     )
 }

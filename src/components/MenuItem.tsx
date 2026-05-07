@@ -23,39 +23,30 @@ const SmartLink = ({ to, children }: SmartLinkProps) => {
         );
     }
 
-    return <Link to={to} >{children}</Link>;
+    return <Link to={to} >{children} </Link>;
 };
 
 const MenuItem = ({ title, image, site }: MenuItemProps) => {
 
     return (
         <>
-            <Grid size={4} spacing={0}>
-                <Card sx={{
-                    background: "white",
-                    display: "flex",
-                    alignItems: "center", flexDirection: "column", borderRadius: "25px"
-                }}
-                    component={SmartLink}
-                    to={site}
+            <Grid size={{ xs: 6, sm: 4, md: 4, lg: 4, xl: 4 }} spacing={0}>
+                <Card
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexDirection: "column",
+                        borderRadius: "25px"
+                    }}
                 >
                     <CardContent>
-                        <Typography sx={{
-                            textAlign: 'center',
-                            fontSize: {
-                                xs: "1rem",
-                                sm: "1.25rem",
-                                md: "1.5rem",
-                                lg: "1.5rem",
-                                xl: "2rem"
-                            }
-                        }}> {title}
+                        <Typography sx={{fontSize: "2rem"}}>
+                            {title}
                         </Typography>
                     </CardContent>
                     <CardMedia sx={{
-                        margin: "10px",
-                        width: { xs: "125px", sm: "200px", md: "200px", lg: "200px" },
-                        height: { sx: "125px", sm: "200px", md: "200px", lg: "200px" },
+                        width: { xs: "75px", sm: "150x", md: "200px", lg: "300px" },
+                        height: { xs: "75px", sm: "150px", md: "200px", lg: "300px" },
                     }} image={image} />
                 </Card>
             </Grid>
