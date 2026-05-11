@@ -1,5 +1,5 @@
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 interface MenuItemProps {
     title: string,
@@ -7,47 +7,55 @@ interface MenuItemProps {
     site: string,
 }
 
-interface SmartLinkProps {
-    to: string;
-    children: React.ReactNode;
+
+// Navegación
+
+function goToSite(url: string, navigate: ReturnType<typeof useNavigate>) {
+
+    if (url.startsWith("https") || url.startsWith("mailto")) {
+        window.location.href = url
+    }
+    else {
+        navigate(url)
+    }
 }
 
-const SmartLink = ({ to, children }: SmartLinkProps) => {
-    const isExternal = to.startsWith("http");
-
-    if (isExternal) {
-        return (
-            <a href={to} target="_blank" rel="noreferrer">
-                {children}
-            </a>
-        );
-    }
-
-    return <Link to={to} >{children} </Link>;
-};
+// Menu 
 
 const MenuItem = ({ title, image, site }: MenuItemProps) => {
+    const navigate = useNavigate()
+    const handleClick = (url: string) => goToSite(url, navigate);
 
     return (
         <>
             <Grid size={{ xs: 6, sm: 4, md: 4, lg: 4, xl: 4 }} spacing={0}>
                 <Card
+                    onClick={() => handleClick(site)}
                     sx={{
                         display: "flex",
                         alignItems: "center",
                         flexDirection: "column",
-                        borderRadius: "25px"
+                        borderRadius: "25px",
+                        width: "20vw",
+                        height: "20vw",
+                        "&:hover":{
+                            cursor: "pointer"
+                        }
                     }}
                 >
                     <CardContent>
-                        <Typography sx={{fontSize: "2rem"}}>
+                        <Typography sx={{ fontSize: "2rem" }}>
                             {title}
                         </Typography>
                     </CardContent>
-                    <CardMedia sx={{
-                        width: { xs: "75px", sm: "150x", md: "200px", lg: "300px" },
-                        height: { xs: "75px", sm: "150px", md: "200px", lg: "300px" },
-                    }} image={image} />
+                    <CardMedia
+                        component="img"
+                        image={image}
+                        sx={{
+                            width: "100%",
+                            objectFit: "contain",
+                        }}
+                    />
                 </Card>
             </Grid>
         </>

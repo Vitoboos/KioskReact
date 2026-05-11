@@ -35,9 +35,9 @@ const Home = () => {
                 }}>
                 <Menu>
                     <MenuItem title='Web Oficial' image={web_icon} site="https://www.rolda.com.ve/en" />
-                    <MenuItem title='Red Social Corporativa' image={social_icon} site="" />
-                    <MenuItem title='Capital Humano' image={hr_icon} site="" />
-                    <MenuItem title='Buzón de Sugerencias' image={suggestions_icon} site="" />
+                    <MenuItem title='Red Social Corporativa' image={social_icon} site="/comunidades" />
+                    <MenuItem title='Capital Humano' image={hr_icon} site="/capitalhumano" />
+                    <MenuItem title='Buzón de Sugerencias' image={suggestions_icon} site="mailto:piplanta@rolda.com.ve?subject=Solicitud" />
                     {/* <Grid size={12}>
                         <Agent image={agentIcon} />
                     </Grid> */}
