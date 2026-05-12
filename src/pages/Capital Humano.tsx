@@ -26,10 +26,10 @@ const HR = () => {
                         flexDirection: "row",
                     }
                 }}>
-                <Menu previous="Capital Humano">
-                    <MenuItem title='Contrato Colectivo' image={contract_icon} site="" />
-                    <MenuItem title='Seguro Médico' image={insurance_icon} site="" />
-                    <MenuItem title='Reglamento Interno' image={rules_icon} site="" />
+                <Menu previous="Regresar">
+                    <MenuItem title='Contrato Colectivo' image={contract_icon} site="/contrato" />
+                    <MenuItem title='Seguro Médico' image={insurance_icon} site="/seguro" />
+                    <MenuItem title='Reglamento Interno' image={rules_icon} site="/reglamento" />
                 </Menu>
 
             </Container>

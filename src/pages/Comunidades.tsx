@@ -26,7 +26,7 @@ const Communities = () => {
                         flexDirection: "row",
                     }
                 }}>
-                <Menu previous="Inicio">
+                <Menu previous="Regresar">
                     <MenuItem title='Capital Humano' image={hr_icon} site="https://engage.cloud.microsoft/main/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIyNTIzNzYyMzYwMzIifQ/new" />
                     <MenuItem title='Mercadeo' image={marketing_icon} site="https://engage.cloud.microsoft/main/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIyNTQ5ODg3MjIxNzYifQ/all" />
                     <MenuItem title='Tecnología' image={it_icon} site="https://engage.cloud.microsoft/main/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiI0MDk0Njk2NjUyOCJ9/new" />

@@ -30,7 +30,7 @@ const Menu = ({ children, previous }: MenuProps) => {
                                 justifyContent: "center",
                             }}
                         >
-                            <Button variant="contained" size="large" sx={{ width: "100%" }} onClick={handleClick}>
+                            <Button variant="contained" size="large" sx={{ width: "20%" }} onClick={handleClick}>
                                 {previous}
                             </Button>
                         </Container>
