@@ -19,7 +19,9 @@ import agentIcon from '../assets/agente.png'
 const Home = () => {
     return (
         <>
+
             <Time />
+
             <Container
                 sx={{
                     minWidth: "70%",
@@ -38,16 +40,11 @@ const Home = () => {
                     <MenuItem title='Red Social Corporativa' image={social_icon} site="/comunidades" />
                     <MenuItem title='Capital Humano' image={hr_icon} site="/capitalhumano" />
                     <MenuItem title='Buzón de Sugerencias' image={suggestions_icon} site="mailto:piplanta@rolda.com.ve?subject=Solicitud" />
-                    {/* <Grid size={12}>
-                        <Agent image={agentIcon} />
-                    </Grid> */}
                 </Menu>
+
+                <Agent image={agentIcon} />
+
             </Container>
-
-
-
-
-
         </>
     )
 }

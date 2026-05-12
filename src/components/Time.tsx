@@ -15,6 +15,7 @@ const Time = () => {
     return (
         <>
             <Container
+                maxWidth={false}
                 sx={{
                     display: "flex",
                     justifyContent: "flex-end"

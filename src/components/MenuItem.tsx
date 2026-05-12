@@ -28,23 +28,26 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
 
     return (
         <>
-            <Grid size={{ xs: 6, sm: 4, md: 4, lg: 4, xl: 4 }} spacing={0}>
+            <Grid size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }} spacing={0}>
                 <Card
                     onClick={() => handleClick(site)}
                     sx={{
                         display: "flex",
                         alignItems: "center",
+                        justifyContent: "center",  
                         flexDirection: "column",
                         borderRadius: "25px",
-                        width: "20vw",
-                        height: "20vw",
-                        "&:hover":{
+                        width: "100%",
+                        aspectRatio: "1 / 1",
+                        overflow: "hidden",
+                        bgcolor: "grey.50",
+                        "&:hover": {
                             cursor: "pointer"
                         }
                     }}
                 >
                     <CardContent>
-                        <Typography sx={{ fontSize: "2rem" }}>
+                        <Typography sx={{ fontSize: "1rem" }}>
                             {title}
                         </Typography>
                     </CardContent>
@@ -53,6 +56,7 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
                         image={image}
                         sx={{
                             width: "100%",
+                            height: "100%",
                             objectFit: "contain",
                         }}
                     />
