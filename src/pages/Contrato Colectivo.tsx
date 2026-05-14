@@ -12,27 +12,6 @@ const Contrato = () => {
     return (
         <>
             <Time />
-
-            <Container
-                sx={{
-                    minWidth: "70%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    minHeight: "100dvh",
-                    "@media (orientation: landscape)": {
-                        display: "flex",
-                        flexDirection: "row",
-                    }
-                }}>
-                <Menu previous="Regresar">
-                    <MenuItem title='Contrato Colectivo' image={contract_icon} site="/contrato" />
-                    <MenuItem title='Seguro Médico' image={insurance_icon} site="/seguro" />
-                    <MenuItem title='Reglamento Interno' image={rules_icon} site="/reglamento" />
-                </Menu>
-
-            </Container>
         </>
     )
 }

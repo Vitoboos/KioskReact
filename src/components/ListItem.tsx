@@ -2,11 +2,14 @@ import { Button, Container, ListItem, ListItemText } from "@mui/material"
 
 interface ListChildProps {
     text: string,
-    document?: string,
+    document: string,
 }
 
 const ListChild = ({ text, document }: ListChildProps) => {
 
+    const handleDoc = (document: string) => {
+        window.location.href = document
+    }
 
     return (
         <>
@@ -22,8 +25,9 @@ const ListChild = ({ text, document }: ListChildProps) => {
                     backgroundColor: "#074191",
                     boxShadow: "2px 2px #052b61",
                 }
-
-            }}>
+            }}
+                onClick={() => handleDoc(document)}
+            >
                 <ListItemText> {text} </ListItemText>
             </ListItem>
         </>

@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 interface ListProps {
-    children: React.ReactNode,
+    children: (searchTerm: string) => React.ReactNode,
     previous?: string,
 }
 
@@ -37,6 +37,7 @@ const ListParent = ({ children, previous }: ListProps) => {
             <Container>
 
                 <TextField label="Buscar" variant="filled" type="search"
+                    onChange={(e) => setSearchTerm(e.target.value)}
                     sx={{
                         margin: 2,
                         backgroundColor: "#fcfcfc",
@@ -46,7 +47,7 @@ const ListParent = ({ children, previous }: ListProps) => {
                     }} />
 
                 <List>
-                    {children}
+                    {children(searchTerm)}
                 </List>
             </Container>
 
