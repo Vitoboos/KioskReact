@@ -1,14 +1,36 @@
-import { Container } from "@mui/material"
+import { Box } from "@mui/material"
 
 import Time from "../components/Time"
+import ListParent from "../components/List"
+import ListChild from "../components/ListItem"
 
-const Seguro = () => {
+import data from "../data/seguro"
+
+const Reglamento = () => {
     return (
         <>
-            <Time />
+
+            <Box
+                sx={{
+                    minHeight: "100dvh"
+                }}
+            >
+
+                <Time />
+
+                <ListParent previous="Regresar">
+                    {(searchTerm) =>
+                        data
+                            .filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                            .map(item => (
+                                <ListChild key={item.id} text={item.name} document={item.url} />
+                            ))
+                    }
+                </ListParent>
+            </Box>
 
         </>
     )
 }
 
-export default Seguro
+export default Reglamento

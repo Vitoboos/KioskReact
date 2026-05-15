@@ -1,4 +1,4 @@
-import { Container, ListItem } from "@mui/material"
+import { Box } from "@mui/material"
 
 import Time from "../components/Time"
 import ListParent from "../components/List"
@@ -9,17 +9,24 @@ import data from "../data/reglamento"
 const Reglamento = () => {
     return (
         <>
-            <Time />
 
-            <ListParent previous="Regresar">
-                {(searchTerm) =>
-                    data
-                        .filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
-                        .map(item => (
-                            <ListChild key={item.id} text={item.name} document={item.url} />
-                        ))
-                }
-            </ListParent>
+            <Box
+                sx={{
+                    minHeight: "100dvh"
+                }}
+            >
+                <Time />
+
+                <ListParent previous="Regresar">
+                    {(searchTerm) =>
+                        data
+                            .filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                            .map(item => (
+                                <ListChild key={item.id} text={item.name} document={item.url} />
+                            ))
+                    }
+                </ListParent>
+            </Box>
 
         </>
     )

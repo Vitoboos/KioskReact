@@ -46,7 +46,12 @@ const ListParent = ({ children, previous }: ListProps) => {
                         width: "100%"
                     }} />
 
-                <List>
+                <List sx={{
+                    padding: "10px",
+                    maxHeight: "50vh",
+                    overflowX: "hidden",
+                    overflowY: "scroll",
+                }}>
                     {children(searchTerm)}
                 </List>
             </Container>

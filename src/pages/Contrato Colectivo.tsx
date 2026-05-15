@@ -1,17 +1,31 @@
-import { Container } from "@mui/material"
+import { Box } from "@mui/material"
 
 import Time from "../components/Time"
-import Menu from "../components/Menu"
-import MenuItem from "../components/MenuItem"
+import ListParent from "../components/List"
+import ListChild from "../components/ListItem"
 
-import contract_icon from "../assets/Contrato.png"
-import insurance_icon from "../assets/Seguro.png"
-import rules_icon from "../assets/Reglas.png"
+import data from "../data/contrato"
 
 const Contrato = () => {
     return (
         <>
-            <Time />
+            <Box
+            sx={{
+                minHeight: "100dvh"
+            }}
+            >
+                <Time />
+
+                <ListParent previous="Regresar">
+                    {(searchTerm) =>
+                        data
+                            .filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                            .map(item => (
+                                <ListChild key={item.id} text={item.name} document={item.url} />
+                            ))
+                    }
+                </ListParent>
+            </Box>
         </>
     )
 }
