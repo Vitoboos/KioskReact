@@ -34,7 +34,7 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
                     sx={{
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",  
+                        justifyContent: "center",
                         flexDirection: "column",
                         borderRadius: "25px",
                         width: "100%",
@@ -47,10 +47,25 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
                     }}
                 >
                     <CardContent>
-                        <Typography sx={{ fontSize: "1rem" }}>
+                        <Typography
+                            sx={{
+                                fontSize: "3rem",
+                                lineHeight: "1.2",
+                                height: "7.2rem",
+                                textAlign: "center",
+                                "@media (orientation: landscape)": {
+                                    fontSize: "2rem",
+                                    lineHeight: "1.2",
+                                    height: "5.2rem",
+                                    display: "flex",
+                                    alignItems: "center",
+                                }
+                            }}>
                             {title}
                         </Typography>
                     </CardContent>
+
+
                     <CardMedia
                         component="img"
                         image={image}
@@ -60,6 +75,7 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
                             objectFit: "contain",
                         }}
                     />
+
                 </Card>
             </Grid>
         </>

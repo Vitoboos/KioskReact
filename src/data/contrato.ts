@@ -105,7 +105,7 @@ export const contrato = [
         url: "/pdf/contrato/Clausula Nro. 21- Dia de la Madre y del Padre (2).pdf"
     },
     {
-        id: 21,
+        id: 22,
         name: "22. Reuniones Junta Directiva Sintra Rolda",
         url: "/pdf/contrato/Clausula Nro. 22- Reuniones Junta Directiva Sintra Rolda (2).pdf"
     },

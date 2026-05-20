@@ -14,7 +14,7 @@ const Agent = ({ image }: AgentProps) => {
                 alt="Agente Corporativo"
                 sx={{
                     width: "100%",
-                    aspectRatio: "1/1",
+                    aspectRatio: "2/3",
                     "@media (orientation:landscape)": {
                         width: "200%",
                         aspectRatio: "2/3",
