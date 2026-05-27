@@ -19,6 +19,8 @@ function App() {
     <Box sx={{
       display: 'flex',
       flexDirection: 'column',
+      width: '100vw',
+      minHeight: '100dvh',
       backgroundImage: `url(${wallpaper})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',

@@ -28,7 +28,7 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
 
     return (
         <>
-            <Grid size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }} spacing={0}>
+            <Grid size={{ xs: 12, sm: 4, md: 4, lg: 4, xl: 4 }}>
                 <Card
                     onClick={() => handleClick(site)}
                     sx={{
@@ -38,44 +38,53 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
                         flexDirection: "column",
                         borderRadius: "25px",
                         width: "100%",
+                        height: "auto", 
                         aspectRatio: "1 / 1",
-                        overflow: "hidden",
                         bgcolor: "grey.50",
+                        boxSizing: "border-box", 
+                        overflow: "hidden", 
+                        p: 2, 
                         "&:hover": {
                             cursor: "pointer"
-                        }
+                        },
                     }}
                 >
-                    <CardContent>
+                    <CardContent
+                        sx={{
+                            p: 0,
+                            width: "100%",
+                            "&:last-child": { pb: 0 } 
+                        }}
+                    >
                         <Typography
                             sx={{
-                                fontSize: "3rem",
+                                fontSize: "2.5rem", 
                                 lineHeight: "1.2",
-                                height: "7.2rem",
+                                height: "6rem",
                                 textAlign: "center",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
                                 "@media (orientation: landscape)": {
-                                    fontSize: "2rem",
-                                    lineHeight: "1.2",
-                                    height: "5.2rem",
-                                    display: "flex",
-                                    alignItems: "center",
-                                }
-                            }}>
+                                    fontSize: "1.8rem",
+                                    height: "4.5rem",
+                                },
+                            }}
+                        >
                             {title}
                         </Typography>
                     </CardContent>
-
 
                     <CardMedia
                         component="img"
                         image={image}
                         sx={{
                             width: "100%",
-                            height: "100%",
+                            flexGrow: 1, 
+                            height: "0", 
                             objectFit: "contain",
                         }}
                     />
-
                 </Card>
             </Grid>
         </>

@@ -24,7 +24,11 @@ const Menu = ({ children, previous }: MenuProps) => {
                 <Grid size={12}>
                     {previous && (
                         <Container
+                            disableGutters
+                            maxWidth={false}
                             sx={{
+                                width: "100%",
+                                height: "100%",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",

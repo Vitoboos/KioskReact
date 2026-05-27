@@ -1,4 +1,4 @@
-import {Container } from '@mui/material'
+import { Container } from '@mui/material'
 // Componentes
 
 import Time from '../components/Time'
@@ -23,17 +23,18 @@ const Home = () => {
             <Time />
 
             <Container
+                disableGutters
+                maxWidth={false}
                 sx={{
-                    minWidth: "70%",
+                    width: '70vw',
+                    height: '100dvh',
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    minHeight: "100dvh",
                     "@media (orientation: landscape)": {
-                        display: "flex",
                         flexDirection: "row",
-                    }
+                    },
                 }}>
                 <Menu>
                     <MenuItem title='Web Oficial' image={web_icon} site="https://www.rolda.com.ve/en" />
@@ -42,7 +43,7 @@ const Home = () => {
                     <MenuItem title='Buzón de Sugerencias' image={suggestions_icon} site="mailto:piplanta@rolda.com.ve?subject=Solicitud" />
                 </Menu>
 
-                <Agent image={agentIcon} />
+                <Agent image={agentIcon} url='msteams://teams.microsoft.com/l/app/?titleId=T_65027c6c-8b00-fdfd-3581-edcaabe09419' />
 
             </Container>
         </>
