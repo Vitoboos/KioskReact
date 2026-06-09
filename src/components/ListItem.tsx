@@ -1,4 +1,4 @@
-import { ListItem, ListItemText } from "@mui/material"
+import { ListItem, ListItemText, Typography } from "@mui/material"
 
 interface ListChildProps {
     text: string,
@@ -14,10 +14,10 @@ const ListChild = ({ text, document }: ListChildProps) => {
     return (
         <>
             <ListItem sx={{
+                padding: "25px",
                 borderRadius: "10px",
                 backgroundColor: "#fcfcfc",
                 margin: 2,
-
                 boxShadow: "2px 2px #808080",
                 "&:hover": {
                     cursor: "pointer",
@@ -28,7 +28,9 @@ const ListChild = ({ text, document }: ListChildProps) => {
             }}
                 onClick={() => handleDoc(document)}
             >
-                <ListItemText> {text} </ListItemText>
+                <ListItemText>
+                    <Typography sx={{fontSize: "3rem "}}> {text} </Typography>
+                </ListItemText>
             </ListItem>
         </>
     )

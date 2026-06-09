@@ -20,41 +20,64 @@ const ListParent = ({ children, previous }: ListProps) => {
 
     return (
         <>
-            {previous && (
-                <Container
-                    sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                    }}
-                >
-                    <Button variant="contained" size="large" sx={{ width: "20%" }} onClick={handleClick}>
-                        {previous}
-                    </Button>
+
+            <Container
+                sx={{
+                    height: "100vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    alignContent: "center",
+                    justifyContent: "center",
+                    justifyItems: "center"
+                }}
+            >
+                {previous && (
+                    <Container
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Button variant="contained" size="large" sx={{ width: "30%", padding: "10px", fontSize: "2rem", margin: "25px" }} onClick={handleClick}>
+                            {previous}
+                        </Button>
+                    </Container>
+                )}
+
+                <Container>
+
+                    <TextField label="Buscar" variant="filled" type="search"
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        slotProps={{
+                            input: {
+                                sx: { fontSize: "2rem" }
+                            }
+                        }}
+                        sx={{
+                            margin: "20px",
+                            backgroundColor: "#fcfcfc",
+                            border: "none",
+                            borderRadius: "25px",
+                            width: "100%",
+                        }}
+
+                    />
+
+
+                    <List sx={{
+                        padding: "10px",
+                        maxHeight: "50vh",
+                        overflowX: "hidden",
+                        overflowY: "scroll",
+                    }}>
+                        {children(searchTerm)}
+                    </List>
                 </Container>
-            )}
 
-            <Container>
-
-                <TextField label="Buscar" variant="filled" type="search"
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    sx={{
-                        margin: 2,
-                        backgroundColor: "#fcfcfc",
-                        border: "none",
-                        borderRadius: "25px",
-                        width: "100%"
-                    }} />
-
-                <List sx={{
-                    padding: "10px",
-                    maxHeight: "50vh",
-                    overflowX: "hidden",
-                    overflowY: "scroll",
-                }}>
-                    {children(searchTerm)}
-                </List>
             </Container>
+
 
         </>
     )

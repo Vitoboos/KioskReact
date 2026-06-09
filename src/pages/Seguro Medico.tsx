@@ -25,9 +25,9 @@ const Seguro = () => {
                 <ListParent previous="Regresar">
                     {(searchTerm) =>
                         pdfDocuments
-                            .filter(item => item.filename.toLowerCase().includes(searchTerm.toLowerCase()))
+                            .filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
                             .map(item => (
-                                <ListChild key={item.id} text={item.filename} document={item.url} />
+                                <ListChild key={item.id} text={item.title} document={item.url} />
                             ))
                     }
                 </ListParent>

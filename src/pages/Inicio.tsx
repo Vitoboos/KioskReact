@@ -8,12 +8,11 @@ import Agent from '../components/Agent'
 
 // Iconos
 
-import web_icon from '../assets/Página Web.png'
-import social_icon from '../assets/Red Social.png'
-import hr_icon from '../assets/Capital Humano.png'
-import suggestions_icon from '../assets/Buzon.png'
-
-import agentIcon from '../assets/agente.png'
+import web_icon from '../assets/icons/Página Web.png'
+import social_icon from '../assets/icons/Red Social.png'
+import hr_icon from '../assets/icons/Capital Humano.png'
+import suggestions_icon from '../assets/icons/Buzon.png'
+import agentIcon from '../assets/icons/agente.png'
 
 
 const Home = () => {

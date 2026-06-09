@@ -15,11 +15,7 @@ export const pdfDocuments: PdfDocument[] = Object.entries(pdfModules).map(
     ([path, url]) => {
         const filename = path.split('/').pop()!;
         const nameWithoutExt = filename.replace('.pdf', '');
-
-        // Convert kebab-case or snake_case to Title Case
         const title = nameWithoutExt
-            .replace(/[-_]/g, ' ')
-            .replace(/\b\w/g, (c) => c.toUpperCase());
 
         return {
             id: nameWithoutExt.toLowerCase().replace(/\s+/g, '-'),
@@ -30,5 +26,3 @@ export const pdfDocuments: PdfDocument[] = Object.entries(pdfModules).map(
     }
 );
 
-// Optional: sort alphabetically by title
-// pdfDocuments.sort((a, b) => a.title.localeCompare(b.title));

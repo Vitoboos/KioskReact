@@ -27,7 +27,7 @@ const Time = () => {
                         xs: '1.2rem',
                         sm: '1.5rem',
                         md: '2rem',
-                        lg: '2.5rem',
+                        lg: '4rem',
                     }, fontWeight: "bold"
                 }}> {tiempo}
                 </Typography>

@@ -10,7 +10,7 @@ import Contrato from './pages/Contrato Colectivo';
 import Seguro from './pages/Seguro Medico';
 import Reglamento from './pages/Reglamento Interno';
 
-import wallpaper from './assets/Fondo de pantalla.webp'
+import wallpaper from './assets/wallpaper/Fondo de pantalla.webp'
 
 function App() {
 
