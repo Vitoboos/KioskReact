@@ -1,3 +1,4 @@
+// src/data/pdfs.ts
 interface PdfDocument {
     id: string;
     title: string;
@@ -5,7 +6,7 @@ interface PdfDocument {
     filename: string;
 }
 
-const pdfModules = import.meta.glob('/src/assets/pdf/reglamento/*.pdf', {
+const pdfModules = import.meta.glob('/src/assets/pdf/seguro/*.pdf', {
     eager: true,
     query: '?url',
     import: 'default',
@@ -16,7 +17,6 @@ export const pdfDocuments: PdfDocument[] = Object.entries(pdfModules).map(
         const filename = path.split('/').pop()!;
         const nameWithoutExt = filename.replace('.pdf', '');
 
-        // Convert kebab-case or snake_case to Title Case
         const title = nameWithoutExt
             .replace(/[-_]/g, ' ')
             .replace(/\b\w/g, (c) => c.toUpperCase());
@@ -30,5 +30,3 @@ export const pdfDocuments: PdfDocument[] = Object.entries(pdfModules).map(
     }
 );
 
-// Optional: sort alphabetically by title
-// pdfDocuments.sort((a, b) => a.title.localeCompare(b.title));

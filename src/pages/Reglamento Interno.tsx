@@ -4,9 +4,15 @@ import Time from "../components/Time"
 import ListParent from "../components/List"
 import ListChild from "../components/ListItem"
 
-import data from "../data/reglamento"
+import { pdfDocuments } from "../data/reglamento"
 
 const Reglamento = () => {
+
+    pdfDocuments.sort((a, b) =>
+        a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' })
+    );
+
+
     return (
         <>
 
@@ -19,10 +25,10 @@ const Reglamento = () => {
 
                 <ListParent previous="Regresar">
                     {(searchTerm) =>
-                        data
-                            .filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                        pdfDocuments
+                            .filter(item => item.filename.toLowerCase().includes(searchTerm.toLowerCase()))
                             .map(item => (
-                                <ListChild key={item.id} text={item.name} document={item.url} />
+                                <ListChild key={item.id} text={item.filename} document={item.url} />
                             ))
                     }
                 </ListParent>
