@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+
 import { Box } from '@mui/material';
 
 import Home from './pages/Inicio'
@@ -12,34 +13,47 @@ import Reglamento from './pages/Reglamento Interno';
 
 import wallpaper from './assets/wallpaper/Fondo de pantalla.webp'
 
+// Escalado
+
+// import { ScaleProvider } from './hooks/useScale';
+// import { Canvas } from './components/Canvas';
+
 function App() {
+
 
   return (
 
-    <Box sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      width: '100vw',
-      minHeight: '100dvh',
-      backgroundImage: `url(${wallpaper})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-    }}>
-      <BrowserRouter>
-        <Routes>
+    // <ScaleProvider>
+    //   <Canvas>
 
-          <Route path="/" element={<Home />} />
-          <Route path="/comunidades" element={<Communities />} />
-          <Route path="/capitalhumano" element={<HR />} />
-          <Route path="/contrato" element={<Contrato />} />
-          <Route path="/seguro" element={<Seguro />} />
-          <Route path="/reglamento" element={<Reglamento />} />
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100vw',
+          minHeight: '100dvh',
+          backgroundImage: `url(${wallpaper})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}>
+          <BrowserRouter>
+            <Routes>
 
-        </Routes>
-      </BrowserRouter>
+              <Route path="/" element={<Home />} />
+              <Route path="/comunidades" element={<Communities />} />
+              <Route path="/capitalhumano" element={<HR />} />
+              <Route path="/contrato" element={<Contrato />} />
+              <Route path="/seguro" element={<Seguro />} />
+              <Route path="/reglamento" element={<Reglamento />} />
 
-    </Box>
+            </Routes>
+          </BrowserRouter>
+
+        </Box>
+    //   </Canvas>
+    // </ScaleProvider>
+
+
 
   )
 }
