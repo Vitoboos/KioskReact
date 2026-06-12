@@ -13,18 +13,13 @@ import Reglamento from './pages/Reglamento Interno';
 
 import wallpaper from './assets/wallpaper/Fondo de pantalla.webp'
 
-// Escalado
-
-// import { ScaleProvider } from './hooks/useScale';
-// import { Canvas } from './components/Canvas';
+import './App.css' 
 
 function App() {
 
 
   return (
 
-    // <ScaleProvider>
-    //   <Canvas>
 
         <Box sx={{
           display: 'flex',
@@ -50,10 +45,6 @@ function App() {
           </BrowserRouter>
 
         </Box>
-    //   </Canvas>
-    // </ScaleProvider>
-
-
 
   )
 }

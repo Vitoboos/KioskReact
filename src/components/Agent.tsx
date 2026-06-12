@@ -19,8 +19,8 @@ const Agent = ({ image, url }: AgentProps) => {
                 src={image}
                 alt="Agente Corporativo"
                 sx={{
-                    width: "100%",
-                    maxHeight: "70vh", 
+                    width: "70%",
+                    maxHeight: "50vh", 
                     aspectRatio: "2/3",
                     objectFit: "contain",
                     transition: "transform 0.2s ease", 

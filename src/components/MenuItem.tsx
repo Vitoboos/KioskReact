@@ -38,12 +38,12 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
                         flexDirection: "column",
                         borderRadius: "25px",
                         width: "100%",
-                        height: "auto", 
+                        height: "auto",
+                        padding: "10px",
                         aspectRatio: "1 / 1",
                         bgcolor: "grey.50",
-                        boxSizing: "border-box", 
-                        overflow: "hidden", 
-                        p: 2, 
+                        boxSizing: "border-box",
+                        p: 2,
                         "&:hover": {
                             cursor: "pointer"
                         },
@@ -53,21 +53,21 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
                         sx={{
                             p: 0,
                             width: "100%",
-                            "&:last-child": { pb: 0 } 
+                            "&:last-child": { pb: 0 }
                         }}
                     >
                         <Typography
                             sx={{
-                                fontSize: "2.5rem", 
-                                lineHeight: "1.2",
-                                height: "6rem",
+                                fontSize: "1.5rem",
+                                lineHeight: "1.8rem",
+                                height: "4rem",
                                 textAlign: "center",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
                                 "@media (orientation: landscape)": {
-                                    fontSize: "1.8rem",
-                                    height: "4.5rem",
+                                    fontSize: "1.5rem",
+                                    height: "4rem",
                                 },
                             }}
                         >
@@ -79,9 +79,8 @@ const MenuItem = ({ title, image, site }: MenuItemProps) => {
                         component="img"
                         image={image}
                         sx={{
-                            width: "100%",
-                            flexGrow: 1, 
-                            height: "0", 
+                            width: "150%",
+                            aspectRatio: "16 / 9",
                             objectFit: "contain",
                         }}
                     />

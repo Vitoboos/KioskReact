@@ -25,7 +25,7 @@ const Home = () => {
                 disableGutters
                 maxWidth={false}
                 sx={{
-                    width: '70vw',
+                    width: '80vw',
                     height: '100dvh',
                     display: "flex",
                     flexDirection: "column",
