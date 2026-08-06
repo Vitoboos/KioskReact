@@ -45,13 +45,14 @@ pub fn run() {
                     )?;
             }
 
-            let webview = WebviewWindowBuilder::new(
+            let _webview = WebviewWindowBuilder::new(
                 app,
                 "main",
                 WebviewUrl::App("index.html".into())
             )
                 .title("Cartelera Informativa")
-                .inner_size(1200.0, 800.0)
+                .fullscreen(true)
+                .focused(true)
                 .on_page_load(|webview, payload| {
                     // Inyecta el script DESPUÉS de cada carga de página
                     let scheme = payload.url().scheme();
