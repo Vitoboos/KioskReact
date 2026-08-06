@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "cartelera-app",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "identifier": "com.rolda.kiosko",
   "build": {
     "frontendDist": "../dist",
@@ -10,21 +10,12 @@
     "beforeBuildCommand": "npm run build"
   },
   "app": {
-    "windows": [
-      {
-        "devtools": true,
-        "title": "Cartelera Interactiva",
-        "width": 2160,
-        "height": 3840,
-        "fullscreen": true,
-        "resizable": true,
-        "decorations": false,
-        "alwaysOnTop": false,
-        "focus": true
-      }
-    ],
+    "windows": [],
     "security": {
-      "csp": null
+      "csp": null,
+      "capabilities": [
+        "default"
+      ]
     }
   },
   "bundle": {
